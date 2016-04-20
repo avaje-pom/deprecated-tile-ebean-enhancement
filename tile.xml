@@ -5,7 +5,7 @@
     <ebeanorm-enhancement.plugin.args>debug=0</ebeanorm-enhancement.plugin.args>
     <querybean-maven-plugin.version>2.1.1</querybean-maven-plugin.version>
     <avaje-ebeanorm-mavenenhancer.version>4.9.2</avaje-ebeanorm-mavenenhancer.version>
-    <codegen-maven-plugin.version>1.1</codegen-maven-plugin.version>
+    <codegen-maven-plugin.version>1.2</codegen-maven-plugin.version>
   </properties>
 
   <build>
