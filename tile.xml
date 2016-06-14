@@ -3,8 +3,8 @@
 
   <properties>
     <ebeanorm-enhancement.plugin.args>debug=0</ebeanorm-enhancement.plugin.args>
-    <querybean-maven-plugin.version>2.1.1</querybean-maven-plugin.version>
-    <avaje-ebeanorm-mavenenhancer.version>4.10.1</avaje-ebeanorm-mavenenhancer.version>
+    <querybean-maven-plugin.version>2.2.1</querybean-maven-plugin.version>
+    <avaje-ebeanorm-mavenenhancer.version>4.11.1</avaje-ebeanorm-mavenenhancer.version>
     <codegen-maven-plugin.version>1.2</codegen-maven-plugin.version>
   </properties>
 
