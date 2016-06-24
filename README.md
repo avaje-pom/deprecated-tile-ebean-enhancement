@@ -46,7 +46,10 @@ This second example also brings in the java-compile tile to configure the *maven
 
 ## What it does
 
-Effectively the kotlin-compile tile brings in the *kotlin-maven-plugin* with configuration for compiling *main* and *test* code.
+Effectively the ebean enhancement tile brings in 3 plugins:
+- `avaje-ebeanorm-mavenenhancer` ... for enhancing Entity beans and @Transactional (in src/main)
+- `querybean-maven-plugin` ... for enhancing "Query beans" (in src/main and src/test)
+- `codegen-maven-plugin` ... for generating "Finders"
 
 ```xml
   <!-- defaults, override in your project pom if needed -->
