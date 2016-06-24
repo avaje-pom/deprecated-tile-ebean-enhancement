@@ -64,6 +64,12 @@ Effectively the kotlin-compile tile brings in the *kotlin-maven-plugin* with con
 
       <plugin>
         <groupId>org.avaje.ebeanorm</groupId>
+        <artifactId>codegen-maven-plugin</artifactId>
+        <version>${codegen-maven-plugin.version}</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.avaje.ebeanorm</groupId>
         <artifactId>querybean-maven-plugin</artifactId>
         <version>${querybean-maven-plugin.version}</version>
         <executions>
