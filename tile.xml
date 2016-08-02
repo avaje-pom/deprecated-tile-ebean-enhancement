@@ -3,9 +3,10 @@
 
   <properties>
     <ebeanorm-enhancement.plugin.args>debug=0</ebeanorm-enhancement.plugin.args>
-    <querybean-maven-plugin.version>2.2.1</querybean-maven-plugin.version>
+    <querybean-maven-plugin.version>2.3.2</querybean-maven-plugin.version>
     <avaje-ebeanorm-mavenenhancer.version>4.11.1</avaje-ebeanorm-mavenenhancer.version>
     <codegen-maven-plugin.version>1.2</codegen-maven-plugin.version>
+    <avaje-ebeanorm-mavenenhancer.target-test-classes>target/test-classes</avaje-ebeanorm-mavenenhancer.target-test-classes>
   </properties>
 
   <build>
@@ -56,6 +57,17 @@
             <phase>process-classes</phase>
             <configuration>
               <classSource>target/classes</classSource>
+              <transformArgs>${ebeanorm-enhancement.plugin.args}</transformArgs>
+            </configuration>
+            <goals>
+              <goal>enhance</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>test</id>
+            <phase>process-test-classes</phase>
+            <configuration>
+              <classSource>${avaje-ebeanorm-mavenenhancer.target-test-classes}</classSource>
               <transformArgs>${ebeanorm-enhancement.plugin.args}</transformArgs>
             </configuration>
             <goals>
