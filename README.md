@@ -16,7 +16,7 @@ In your project pom under build / plugins add the tiles-maven-plugin with the fo
         <extensions>true</extensions>
         <configuration>
           <tiles>
-            <tile>org.avaje.tile:ebean-enhancement:1.1</tile>
+            <tile>org.avaje.tile:ebean-enhancement:1.4</tile>
           </tiles>
         </configuration>
       </plugin>
@@ -36,7 +36,7 @@ This second example also brings in the java-compile tile to configure the *maven
         <configuration>
           <tiles>
             <tile>org.avaje.tile:java-compile:1.1</tile>
-            <tile>org.avaje.tile:ebean-enhancement:1.1</tile>
+            <tile>org.avaje.tile:ebean-enhancement:1.4</tile>
           </tiles>
         </configuration>
       </plugin>
@@ -46,21 +46,30 @@ This second example also brings in the java-compile tile to configure the *maven
 
 ## What it does
 
-Effectively the kotlin-compile tile brings in the *kotlin-maven-plugin* with configuration for compiling *main* and *test* code.
+Effectively the ebean enhancement tile brings in 3 plugins:
+- `avaje-ebeanorm-mavenenhancer` ... for enhancing Entity beans and @Transactional (in src/main)
+- `querybean-maven-plugin` ... for enhancing "Query beans" (in src/main and src/test)
+- `codegen-maven-plugin` ... for generating "Finders"
 
 ```xml
   <!-- defaults, override in your project pom if needed -->
 
   <properties>
     <ebeanorm-enhancement.plugin.args>debug=0</ebeanorm-enhancement.plugin.args>
-    <querybean-maven-plugin.version>2.1.1</querybean-maven-plugin.version>
-    <avaje-ebeanorm-mavenenhancer.version>4.9.1</avaje-ebeanorm-mavenenhancer.version>
+    <querybean-maven-plugin.version>2.2.1</querybean-maven-plugin.version>
+    <avaje-ebeanorm-mavenenhancer.version>4.11.1</avaje-ebeanorm-mavenenhancer.version>
   </properties>
 
   <!-- brought into build / plugins -->
 
   <build>
     <plugins>
+
+      <plugin>
+        <groupId>org.avaje.ebeanorm</groupId>
+        <artifactId>codegen-maven-plugin</artifactId>
+        <version>${codegen-maven-plugin.version}</version>
+      </plugin>
 
       <plugin>
         <groupId>org.avaje.ebeanorm</groupId>
