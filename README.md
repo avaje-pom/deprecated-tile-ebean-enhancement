@@ -1,3 +1,7 @@
+# Deprecated
+
+Deprecated in favour of https://github.com/ebean-orm/ebean-maven-tile
+
 # ebean-enhancement tile
 
 Maven tile that performs the Ebean enhancement and Query bean enhancement.
